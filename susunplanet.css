@@ -1,0 +1,1482 @@
+/* =========================================================
+   STELLAR KIDS
+   GAME: SUSUN PLANET
+   planetgame_css.css
+========================================================= */
+
+
+/* =========================================================
+   GAME SECTION
+========================================================= */
+
+.game-section {
+
+  position: relative;
+
+  width: 100%;
+
+  min-height: 100vh;
+
+  padding:
+    150px 25px
+    80px;
+
+  box-sizing: border-box;
+
+}
+
+
+.game-container {
+
+  position: relative;
+
+  width: min(1150px, 100%);
+
+  margin: 0 auto;
+
+}
+
+
+/* =========================================================
+   GAME HEADER
+========================================================= */
+
+.game-header {
+
+  text-align: center;
+
+  margin-bottom: 30px;
+
+}
+
+
+.game-label {
+
+  display: inline-block;
+
+  margin-bottom: 10px;
+
+  color: #00f7ff;
+
+  font-family:
+    "Orbitron",
+    sans-serif;
+
+  font-size: 0.72rem;
+
+  font-weight: 600;
+
+  letter-spacing: 2px;
+
+  text-transform: uppercase;
+
+}
+
+
+.game-header h1 {
+
+  margin:
+    0 0 12px;
+
+  color: #ffffff;
+
+  font-family:
+    "Orbitron",
+    sans-serif;
+
+  font-size:
+    clamp(2rem, 5vw, 3.5rem);
+
+  line-height: 1.1;
+
+  text-shadow:
+    0 0 20px
+    rgba(0, 247, 255, 0.35);
+
+}
+
+
+.game-header p {
+
+  width: min(700px, 100%);
+
+  margin:
+    0 auto;
+
+  color:
+    rgba(255, 255, 255, 0.72);
+
+  font-size: 0.95rem;
+
+  line-height: 1.7;
+
+}
+
+
+.game-header p strong {
+
+  color: #00f7ff;
+
+}
+
+
+/* =========================================================
+   GAME STATS
+========================================================= */
+
+.game-stats {
+
+  display: grid;
+
+  grid-template-columns:
+    repeat(3, 1fr);
+
+  gap: 15px;
+
+  width: min(800px, 100%);
+
+  margin:
+    0 auto 20px;
+
+}
+
+
+.stat-box {
+
+  display: flex;
+
+  align-items: center;
+
+  gap: 12px;
+
+  min-height: 75px;
+
+  padding:
+    14px 18px;
+
+  box-sizing: border-box;
+
+  border:
+    1px solid
+    rgba(255, 255, 255, 0.12);
+
+  border-radius: 15px;
+
+  background:
+    rgba(255, 255, 255, 0.07);
+
+  backdrop-filter:
+    blur(12px);
+
+  -webkit-backdrop-filter:
+    blur(12px);
+
+}
+
+
+.stat-icon {
+
+  flex-shrink: 0;
+
+  font-size: 1.5rem;
+
+}
+
+
+.stat-box small {
+
+  display: block;
+
+  margin-bottom: 3px;
+
+  color:
+    rgba(255, 255, 255, 0.5);
+
+  font-size: 0.65rem;
+
+  letter-spacing: 1px;
+
+}
+
+
+.stat-box strong {
+
+  display: block;
+
+  color: #ffffff;
+
+  font-family:
+    "Orbitron",
+    sans-serif;
+
+  font-size: 1.1rem;
+
+}
+
+
+/* TIMER WARNING */
+
+#timer.timer-warning {
+
+  color: #ff6575;
+
+  animation:
+    timerPulse 0.8s
+    infinite
+    alternate;
+
+}
+
+
+@keyframes timerPulse {
+
+  from {
+
+    opacity: 1;
+
+  }
+
+  to {
+
+    opacity: 0.45;
+
+  }
+
+}
+
+
+/* =========================================================
+   PROGRESS
+========================================================= */
+
+.game-progress {
+
+  width: min(800px, 100%);
+
+  margin:
+    0 auto 25px;
+
+}
+
+
+.progress-info {
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: space-between;
+
+  margin-bottom: 8px;
+
+  color:
+    rgba(255, 255, 255, 0.65);
+
+  font-size: 0.8rem;
+
+}
+
+
+.progress-info strong {
+
+  color: #00f7ff;
+
+  font-family:
+    "Orbitron",
+    sans-serif;
+
+}
+
+
+.progress-bar {
+
+  width: 100%;
+
+  height: 7px;
+
+  overflow: hidden;
+
+  border-radius: 10px;
+
+  background:
+    rgba(255, 255, 255, 0.1);
+
+}
+
+
+.progress-fill {
+
+  width: 0%;
+
+  height: 100%;
+
+  border-radius: inherit;
+
+  background:
+    linear-gradient(
+      90deg,
+      #00f7ff,
+      #7c5cff
+    );
+
+  box-shadow:
+    0 0 15px
+    rgba(0, 247, 255, 0.6);
+
+  transition:
+    width 0.35s ease;
+
+}
+
+
+/* =========================================================
+   DROP AREA
+========================================================= */
+
+.drop-area-wrapper {
+
+  width: 100%;
+
+  margin:
+    0 auto 25px;
+
+  padding: 20px;
+
+  box-sizing: border-box;
+
+  border:
+    1px solid
+    rgba(255, 255, 255, 0.1);
+
+  border-radius: 22px;
+
+  background:
+    rgba(255, 255, 255, 0.045);
+
+  backdrop-filter:
+    blur(15px);
+
+  -webkit-backdrop-filter:
+    blur(15px);
+
+}
+
+
+.drop-title {
+
+  display: flex;
+
+  align-items: center;
+
+  gap: 8px;
+
+  margin-bottom: 15px;
+
+  color: #ffffff;
+
+  font-family:
+    "Orbitron",
+    sans-serif;
+
+  font-size: 0.78rem;
+
+  letter-spacing: 1px;
+
+}
+
+
+.drop-zone {
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  flex-wrap: wrap;
+
+  gap: 12px;
+
+  min-height: 185px;
+
+  padding: 20px;
+
+  box-sizing: border-box;
+
+  border:
+    2px dashed
+    rgba(0, 247, 255, 0.3);
+
+  border-radius: 18px;
+
+  background:
+    rgba(0, 0, 0, 0.15);
+
+  transition:
+    0.25s ease;
+
+}
+
+
+.drop-zone.drag-over {
+
+  border-color:
+    #00f7ff;
+
+  background:
+    rgba(0, 247, 255, 0.1);
+
+  box-shadow:
+    0 0 30px
+    rgba(0, 247, 255, 0.12);
+
+}
+
+
+.placeholder {
+
+  width: 100%;
+
+  text-align: center;
+
+  color:
+    rgba(255, 255, 255, 0.42);
+
+  font-size: 0.85rem;
+
+  line-height: 1.6;
+
+}
+
+
+/* =========================================================
+   PLANET BANK
+========================================================= */
+
+.planet-bank-wrapper {
+
+  width: 100%;
+
+  margin:
+    0 auto 25px;
+
+  padding: 20px;
+
+  box-sizing: border-box;
+
+  border:
+    1px solid
+    rgba(255, 255, 255, 0.1);
+
+  border-radius: 22px;
+
+  background:
+    rgba(255, 255, 255, 0.045);
+
+  backdrop-filter:
+    blur(15px);
+
+  -webkit-backdrop-filter:
+    blur(15px);
+
+}
+
+
+.planet-bank-title {
+
+  display: flex;
+
+  align-items: center;
+
+  gap: 8px;
+
+  margin-bottom: 15px;
+
+  color: #ffffff;
+
+  font-family:
+    "Orbitron",
+    sans-serif;
+
+  font-size: 0.78rem;
+
+  letter-spacing: 1px;
+
+}
+
+
+/* =========================================================
+   PLANET GRID
+========================================================= */
+
+.planet-drag-container {
+
+  display: grid;
+
+  grid-template-columns:
+    repeat(8, 1fr);
+
+  gap: 12px;
+
+}
+
+
+/* =========================================================
+   PLANET CARD
+========================================================= */
+
+.planet-card {
+
+  position: relative;
+
+  display: flex;
+
+  flex-direction: column;
+
+  align-items: center;
+
+  justify-content: center;
+
+  min-height: 125px;
+
+  padding: 12px;
+
+  box-sizing: border-box;
+
+  cursor: grab;
+
+  user-select: none;
+
+  -webkit-user-select: none;
+
+  border:
+    1px solid
+    rgba(255, 255, 255, 0.12);
+
+  border-radius: 16px;
+
+  background:
+    rgba(255, 255, 255, 0.07);
+
+  transition:
+    transform 0.25s ease,
+    border-color 0.25s ease,
+    background 0.25s ease,
+    box-shadow 0.25s ease;
+
+}
+
+
+.planet-card:hover {
+
+  transform:
+    translateY(-5px);
+
+  border-color:
+    rgba(0, 247, 255, 0.5);
+
+  background:
+    rgba(0, 247, 255, 0.08);
+
+  box-shadow:
+    0 10px 30px
+    rgba(0, 0, 0, 0.25);
+
+}
+
+
+.planet-card.dragging {
+
+  opacity: 0.45;
+
+  transform:
+    scale(0.95);
+
+  cursor: grabbing;
+
+}
+
+
+.planet-card img {
+
+  width: 70px;
+
+  height: 70px;
+
+  object-fit: contain;
+
+  margin-bottom: 8px;
+
+  pointer-events: none;
+
+}
+
+
+.planet-card p {
+
+  margin: 0;
+
+  color: #ffffff;
+
+  font-size: 0.72rem;
+
+  font-weight: 600;
+
+  text-align: center;
+
+}
+
+
+.planet-card.correct-card {
+
+  border-color:
+    #42ff9b !important;
+
+  box-shadow:
+    0 0 20px
+    rgba(66, 255, 155, 0.35);
+
+  animation:
+    correctPulse 0.7s ease;
+
+}
+
+
+@keyframes correctPulse {
+
+  50% {
+
+    transform:
+      scale(1.05);
+
+  }
+
+}
+
+
+/* =========================================================
+   GAME ACTIONS
+========================================================= */
+
+.game-actions {
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  gap: 12px;
+
+  margin:
+    25px 0;
+
+}
+
+
+.check-order-btn,
+.hint-btn,
+.back-game-btn {
+
+  display: inline-flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  min-height: 46px;
+
+  padding:
+    12px 22px;
+
+  box-sizing: border-box;
+
+  border-radius: 12px;
+
+  font-family:
+    "Orbitron",
+    sans-serif;
+
+  font-size: 0.72rem;
+
+  font-weight: 600;
+
+  text-decoration: none;
+
+  cursor: pointer;
+
+  transition:
+    0.25s ease;
+
+}
+
+
+.check-order-btn {
+
+  color: #001316;
+
+  border: none;
+
+  background:
+    linear-gradient(
+      135deg,
+      #00f7ff,
+      #7c5cff
+    );
+
+  box-shadow:
+    0 8px 25px
+    rgba(0, 247, 255, 0.2);
+
+}
+
+
+.check-order-btn:hover {
+
+  transform:
+    translateY(-3px);
+
+  box-shadow:
+    0 12px 35px
+    rgba(0, 247, 255, 0.35);
+
+}
+
+
+.hint-btn {
+
+  color: #ffffff;
+
+  border:
+    1px solid
+    rgba(255, 255, 255, 0.15);
+
+  background:
+    rgba(255, 255, 255, 0.08);
+
+}
+
+
+.hint-btn:hover {
+
+  color: #00f7ff;
+
+  border-color:
+    #00f7ff;
+
+}
+
+
+/* =========================================================
+   NOTIFICATION
+========================================================= */
+
+.notification {
+
+  display: none;
+
+  width: min(700px, 100%);
+
+  margin:
+    0 auto 15px;
+
+  padding:
+    15px 20px;
+
+  box-sizing: border-box;
+
+  border-radius: 12px;
+
+  text-align: center;
+
+  font-size: 0.88rem;
+
+  font-weight: 600;
+
+  line-height: 1.5;
+
+  animation:
+    notificationIn 0.3s ease;
+
+}
+
+
+.notification.success {
+
+  color: #42ff9b;
+
+  background:
+    rgba(66, 255, 155, 0.1);
+
+  border:
+    1px solid
+    rgba(66, 255, 155, 0.3);
+
+}
+
+
+.notification.error {
+
+  color: #ff7080;
+
+  background:
+    rgba(255, 112, 128, 0.1);
+
+  border:
+    1px solid
+    rgba(255, 112, 128, 0.3);
+
+}
+
+
+.notification.warning {
+
+  color: #ffd166;
+
+  background:
+    rgba(255, 209, 102, 0.1);
+
+  border:
+    1px solid
+    rgba(255, 209, 102, 0.3);
+
+}
+
+
+@keyframes notificationIn {
+
+  from {
+
+    opacity: 0;
+
+    transform:
+      translateY(8px);
+
+  }
+
+  to {
+
+    opacity: 1;
+
+    transform:
+      translateY(0);
+
+  }
+
+}
+
+
+/* =========================================================
+   HINT BOX
+========================================================= */
+
+.hint-box {
+
+  width: min(700px, 100%);
+
+  margin:
+    0 auto 20px;
+
+  padding:
+    15px 18px;
+
+  box-sizing: border-box;
+
+  border-radius: 12px;
+
+  color:
+    rgba(255, 255, 255, 0.85);
+
+  background:
+    rgba(0, 247, 255, 0.07);
+
+  border:
+    1px solid
+    rgba(0, 247, 255, 0.2);
+
+  font-size: 0.85rem;
+
+  line-height: 1.6;
+
+}
+
+
+/* =========================================================
+   RESULT MODAL
+========================================================= */
+
+.result-modal {
+
+  position: fixed;
+
+  inset: 0;
+
+  z-index: 9999;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  padding: 20px;
+
+  box-sizing: border-box;
+
+  background:
+    rgba(0, 0, 0, 0.75);
+
+  backdrop-filter:
+    blur(12px);
+
+  -webkit-backdrop-filter:
+    blur(12px);
+
+  opacity: 0;
+
+  visibility: hidden;
+
+  transition:
+    0.3s ease;
+
+}
+
+
+.result-modal.show {
+
+  opacity: 1;
+
+  visibility: visible;
+
+}
+
+
+.result-card {
+
+  width: min(600px, 100%);
+
+  max-height: 90vh;
+
+  overflow-y: auto;
+
+  padding: 35px;
+
+  box-sizing: border-box;
+
+  text-align: center;
+
+  border:
+    1px solid
+    rgba(0, 247, 255, 0.2);
+
+  border-radius: 25px;
+
+  background:
+    linear-gradient(
+      145deg,
+      rgba(20, 28, 55, 0.97),
+      rgba(5, 10, 25, 0.97)
+    );
+
+  box-shadow:
+    0 30px 80px
+    rgba(0, 0, 0, 0.5);
+
+  transform:
+    translateY(20px)
+    scale(0.96);
+
+  transition:
+    0.3s ease;
+
+}
+
+
+.result-modal.show .result-card {
+
+  transform:
+    translateY(0)
+    scale(1);
+
+}
+
+
+.result-icon {
+
+  margin-bottom: 10px;
+
+  font-size: 4rem;
+
+  animation:
+    resultFloat 2s
+    ease-in-out
+    infinite;
+
+}
+
+
+@keyframes resultFloat {
+
+  50% {
+
+    transform:
+      translateY(-8px);
+
+  }
+
+}
+
+
+.result-card h2 {
+
+  margin:
+    5px 0 10px;
+
+  color: #ffffff;
+
+  font-family:
+    "Orbitron",
+    sans-serif;
+
+  font-size: 1.7rem;
+
+}
+
+
+.result-card > p {
+
+  color:
+    rgba(255, 255, 255, 0.7);
+
+  font-size: 0.9rem;
+
+  line-height: 1.6;
+
+}
+
+
+/* =========================================================
+   RESULT STATS
+========================================================= */
+
+.result-stats {
+
+  display: grid;
+
+  grid-template-columns:
+    repeat(3, 1fr);
+
+  gap: 10px;
+
+  margin:
+    25px 0;
+
+}
+
+
+.result-stats > div {
+
+  padding: 15px;
+
+  border-radius: 14px;
+
+  background:
+    rgba(255, 255, 255, 0.06);
+
+}
+
+
+.result-stats small {
+
+  display: block;
+
+  margin-bottom: 5px;
+
+  color:
+    rgba(255, 255, 255, 0.45);
+
+  font-size: 0.62rem;
+
+  letter-spacing: 1px;
+
+}
+
+
+.result-stats strong {
+
+  color: #00f7ff;
+
+  font-family:
+    "Orbitron",
+    sans-serif;
+
+  font-size: 1rem;
+
+}
+
+
+/* =========================================================
+   PLANET FACT
+========================================================= */
+
+.planet-fact {
+
+  display: flex;
+
+  align-items: flex-start;
+
+  gap: 12px;
+
+  padding: 16px;
+
+  box-sizing: border-box;
+
+  border-radius: 15px;
+
+  text-align: left;
+
+  background:
+    rgba(0, 247, 255, 0.06);
+
+  border:
+    1px solid
+    rgba(0, 247, 255, 0.12);
+
+}
+
+
+.planet-fact > span {
+
+  flex-shrink: 0;
+
+  font-size: 1.7rem;
+
+}
+
+
+.planet-fact strong {
+
+  color: #00f7ff;
+
+  font-size: 0.85rem;
+
+}
+
+
+.planet-fact p {
+
+  margin:
+    5px 0 0;
+
+  color:
+    rgba(255, 255, 255, 0.7);
+
+  font-size: 0.82rem;
+
+  line-height: 1.5;
+
+}
+
+
+/* =========================================================
+   RESULT ACTIONS
+========================================================= */
+
+.result-actions {
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  gap: 10px;
+
+  margin-top: 25px;
+
+}
+
+
+.back-game-btn {
+
+  color: #ffffff;
+
+  border:
+    1px solid
+    rgba(255, 255, 255, 0.15);
+
+  background:
+    rgba(255, 255, 255, 0.08);
+
+}
+
+
+.back-game-btn:hover {
+
+  color: #00f7ff;
+
+  border-color:
+    rgba(0, 247, 255, 0.5);
+
+}
+
+
+/* =========================================================
+   RESPONSIVE — TABLET
+========================================================= */
+
+@media (max-width: 1000px) {
+
+  .planet-drag-container {
+
+    grid-template-columns:
+      repeat(4, 1fr);
+
+  }
+
+}
+
+
+/* =========================================================
+   RESPONSIVE — MOBILE
+========================================================= */
+
+@media (max-width: 768px) {
+
+  .game-section {
+
+    padding:
+      130px 18px
+      60px;
+
+  }
+
+
+  .game-stats {
+
+    grid-template-columns:
+      repeat(3, 1fr);
+
+    gap: 8px;
+
+  }
+
+
+  .stat-box {
+
+    justify-content: center;
+
+    padding:
+      12px 8px;
+
+  }
+
+
+  .stat-icon {
+
+    font-size: 1.2rem;
+
+  }
+
+
+  .stat-box small {
+
+    font-size: 0.55rem;
+
+  }
+
+
+  .stat-box strong {
+
+    font-size: 0.9rem;
+
+  }
+
+
+  .planet-drag-container {
+
+    grid-template-columns:
+      repeat(4, 1fr);
+
+  }
+
+
+  .planet-card {
+
+    min-height: 110px;
+
+  }
+
+
+  .planet-card img {
+
+    width: 55px;
+
+    height: 55px;
+
+  }
+
+}
+
+
+/* =========================================================
+   RESPONSIVE — SMALL MOBILE
+========================================================= */
+
+@media (max-width: 480px) {
+
+  .game-section {
+
+    padding:
+      115px 12px
+      45px;
+
+  }
+
+
+  .game-header h1 {
+
+    font-size: 2rem;
+
+  }
+
+
+  .game-header p {
+
+    font-size: 0.82rem;
+
+  }
+
+
+  .game-stats {
+
+    grid-template-columns:
+      1fr;
+
+  }
+
+
+  .stat-box {
+
+    justify-content: flex-start;
+
+  }
+
+
+  .planet-drag-container {
+
+    grid-template-columns:
+      repeat(2, 1fr);
+
+  }
+
+
+  .drop-area-wrapper,
+  .planet-bank-wrapper {
+
+    padding: 14px;
+
+    border-radius: 17px;
+
+  }
+
+
+  .drop-zone {
+
+    min-height: 250px;
+
+    padding: 12px;
+
+    gap: 8px;
+
+  }
+
+
+  .planet-card {
+
+    min-height: 105px;
+
+  }
+
+
+  .planet-card img {
+
+    width: 52px;
+
+    height: 52px;
+
+  }
+
+
+  .game-actions {
+
+    flex-direction: column;
+
+  }
+
+
+  .check-order-btn,
+  .hint-btn {
+
+    width: 100%;
+
+  }
+
+
+  .result-card {
+
+    padding:
+      25px 18px;
+
+  }
+
+
+  .result-stats {
+
+    grid-template-columns:
+      1fr;
+
+  }
+
+
+  .result-actions {
+
+    flex-direction: column;
+
+  }
+
+
+  .result-actions > * {
+
+    width: 100%;
+
+  }
+
+}
+
+
+/* =========================================================
+   ACCESSIBILITY
+========================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+
+  .planet-card,
+  .progress-fill,
+  .result-modal,
+  .result-card {
+
+    transition: none;
+
+  }
+
+
+  .result-icon,
+  #timer.timer-warning,
+  .correct-card {
+
+    animation: none;
+
+  }
+
+}

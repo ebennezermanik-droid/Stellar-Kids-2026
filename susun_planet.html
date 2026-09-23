@@ -1,0 +1,882 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+
+  <meta charset="UTF-8">
+
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+  >
+
+  <title>Stellar Kids | Susun Planet</title>
+
+  <meta
+    name="description"
+    content="Game edukasi Stellar Kids untuk menyusun planet berdasarkan jaraknya dari Matahari."
+  >
+
+  <!-- FONT -->
+  <link
+    href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;600;700&display=swap"
+    rel="stylesheet"
+  >
+
+  <!-- CSS UTAMA -->
+  <link
+    rel="stylesheet"
+    href="page_game.css"
+  >
+
+  <!-- CSS KHUSUS GAME -->
+  <link
+    rel="stylesheet"
+    href="susunplanet.css"
+  >
+
+</head>
+
+
+<body>
+
+<div class="wrapper">
+
+
+  <!-- =========================================
+       BACKGROUND VIDEO
+  ========================================== -->
+
+  <div
+    class="background-video"
+    aria-hidden="true"
+  >
+
+    <video
+      autoplay
+      muted
+      loop
+      playsinline
+      poster="https://i.imgur.com/7sGwQYQ.png"
+    >
+
+      <source
+        src="Video/Star scene - Free M.G Stock Footage.mp4"
+        type="video/mp4"
+      >
+
+    </video>
+
+    <div class="background-overlay"></div>
+
+  </div>
+
+
+
+  <!-- =========================================
+       HEADER
+  ========================================== -->
+
+  <header class="main-header">
+
+    <div class="header-container">
+
+
+      <!-- LOGO -->
+
+      <a
+        href="index.html"
+        class="logo"
+      >
+
+        <img
+          src="Png/Logo@4x.png"
+          alt="Logo Stellar Kids"
+          class="logo-image"
+        >
+
+      </a>
+
+
+
+      <!-- NAVIGATION -->
+
+      <nav
+        class="main-nav"
+        aria-label="Navigasi utama"
+      >
+
+        <ul class="nav-links">
+
+          <li>
+            <a href="index.html">
+              Beranda
+            </a>
+          </li>
+
+          <li>
+            <a href="tentangweb.html">
+              Tentang Web
+            </a>
+          </li>
+
+          <li>
+            <a
+              href="page_game.html"
+              class="active"
+            >
+              Games
+            </a>
+          </li>
+
+          <li>
+            <a href="index.html#pembelajaran">
+              Pembelajaran
+            </a>
+          </li>
+
+        </ul>
+
+
+        <!-- MOBILE BURGER -->
+
+        <button
+          class="burger"
+          type="button"
+          aria-label="Buka menu navigasi"
+          aria-expanded="false"
+        >
+
+          <span></span>
+          <span></span>
+          <span></span>
+
+        </button>
+
+      </nav>
+
+    </div>
+
+  </header>
+
+
+
+  <!-- =========================================
+       GAME
+  ========================================== -->
+
+  <main>
+
+    <section class="game-section">
+
+      <div class="game-container">
+
+
+        <!-- GAME TITLE -->
+
+        <div class="game-header">
+
+          <span class="game-label">
+            STELLAR KIDS • PLANET MISSION
+          </span>
+
+          <h1>
+            Susun Planet
+          </h1>
+
+          <p>
+            Susun planet berdasarkan urutannya dari
+            <strong>Matahari</strong>, mulai dari planet
+            yang paling dekat hingga yang paling jauh.
+          </p>
+
+        </div>
+
+
+
+        <!-- =====================================
+             GAME STATS
+        ====================================== -->
+
+        <div class="game-stats">
+
+
+          <!-- SCORE -->
+
+          <div class="stat-box">
+
+            <span class="stat-icon">
+              ⭐
+            </span>
+
+            <div>
+
+              <small>
+                SKOR
+              </small>
+
+              <strong id="score">
+                0
+              </strong>
+
+            </div>
+
+          </div>
+
+
+          <!-- TIMER -->
+
+          <div class="stat-box">
+
+            <span class="stat-icon">
+              ⏱️
+            </span>
+
+            <div>
+
+              <small>
+                WAKTU
+              </small>
+
+              <strong id="timer">
+                60
+              </strong>
+
+            </div>
+
+          </div>
+
+
+          <!-- ATTEMPTS -->
+
+          <div class="stat-box">
+
+            <span class="stat-icon">
+              ❤️
+            </span>
+
+            <div>
+
+              <small>
+                KESEMPATAN
+              </small>
+
+              <strong id="attempts">
+                3
+              </strong>
+
+            </div>
+
+          </div>
+
+        </div>
+
+
+
+        <!-- =====================================
+             PROGRESS
+        ====================================== -->
+
+        <div class="game-progress">
+
+          <div class="progress-info">
+
+            <span>
+              Progress
+            </span>
+
+            <strong id="progressText">
+              0 / 8
+            </strong>
+
+          </div>
+
+
+          <div class="progress-bar">
+
+            <div
+              id="progressFill"
+              class="progress-fill"
+            ></div>
+
+          </div>
+
+        </div>
+
+
+
+        <!-- =====================================
+             DROP ZONE
+        ====================================== -->
+
+        <div class="drop-area-wrapper">
+
+
+          <div class="drop-title">
+
+            <span>
+              ☀️
+            </span>
+
+            <span>
+              URUTAN PLANET
+            </span>
+
+          </div>
+
+
+          <div
+            id="drop-zone"
+            class="drop-zone"
+          >
+
+            <div
+              id="placeholder"
+              class="placeholder"
+            >
+
+              Tarik planet ke sini dan susun
+              dari yang paling dekat dengan Matahari.
+
+            </div>
+
+          </div>
+
+        </div>
+
+
+
+        <!-- =====================================
+             PLANET BANK
+        ====================================== -->
+
+        <div class="planet-bank-wrapper">
+
+
+          <div class="planet-bank-title">
+
+            <span>
+              🪐
+            </span>
+
+            <span>
+              PILIH PLANET
+            </span>
+
+          </div>
+
+
+          <div
+            id="planet-container"
+            class="planet-drag-container"
+          >
+
+
+            <!-- MERKURIUS -->
+
+            <div
+              class="planet-card"
+              draggable="true"
+              data-planet="mercury"
+            >
+
+              <img
+                src="Png/Merkurius@4x.png"
+                alt="Merkurius"
+                draggable="false"
+              >
+
+              <p>
+                Merkurius
+              </p>
+
+            </div>
+
+
+
+            <!-- VENUS -->
+
+            <div
+              class="planet-card"
+              draggable="true"
+              data-planet="venus"
+            >
+
+              <img
+                src="Png/Venus@4x.png"
+                alt="Venus"
+                draggable="false"
+              >
+
+              <p>
+                Venus
+              </p>
+
+            </div>
+
+
+
+            <!-- BUMI -->
+
+            <div
+              class="planet-card"
+              draggable="true"
+              data-planet="earth"
+            >
+
+              <img
+                src="Png/Bumi@4x.png"
+                alt="Bumi"
+                draggable="false"
+              >
+
+              <p>
+                Bumi
+              </p>
+
+            </div>
+
+
+
+            <!-- MARS -->
+
+            <div
+              class="planet-card"
+              draggable="true"
+              data-planet="mars"
+            >
+
+              <img
+                src="Png/Mars@4x.png"
+                alt="Mars"
+                draggable="false"
+              >
+
+              <p>
+                Mars
+              </p>
+
+            </div>
+
+
+
+            <!-- JUPITER -->
+
+            <div
+              class="planet-card"
+              draggable="true"
+              data-planet="jupiter"
+            >
+
+              <img
+                src="Png/Jupiter@4x.png"
+                alt="Jupiter"
+                draggable="false"
+              >
+
+              <p>
+                Jupiter
+              </p>
+
+            </div>
+
+
+
+            <!-- SATURNUS -->
+
+            <div
+              class="planet-card"
+              draggable="true"
+              data-planet="saturn"
+            >
+
+              <img
+                src="Png/Saturnus@4x.png"
+                alt="Saturnus"
+                draggable="false"
+              >
+
+              <p>
+                Saturnus
+              </p>
+
+            </div>
+
+
+
+            <!-- URANUS -->
+
+            <div
+              class="planet-card"
+              draggable="true"
+              data-planet="uranus"
+            >
+
+              <img
+                src="Png/Uranus@4x.png"
+                alt="Uranus"
+                draggable="false"
+              >
+
+              <p>
+                Uranus
+              </p>
+
+            </div>
+
+
+
+            <!-- NEPTUNUS -->
+
+            <div
+              class="planet-card"
+              draggable="true"
+              data-planet="neptune"
+            >
+
+              <img
+                src="Png/Neptunus@4x.png"
+                alt="Neptunus"
+                draggable="false"
+              >
+
+              <p>
+                Neptunus
+              </p>
+
+            </div>
+
+          </div>
+
+        </div>
+
+
+
+        <!-- =====================================
+             ACTION BUTTON
+        ====================================== -->
+
+        <div class="game-actions">
+
+
+          <button
+            id="hintBtn"
+            class="hint-btn"
+            type="button"
+          >
+
+            💡 Hint
+
+          </button>
+
+
+          <button
+            id="checkBtn"
+            class="check-order-btn"
+            type="button"
+          >
+
+            🚀 Cek Urutan
+
+          </button>
+
+        </div>
+
+
+
+        <!-- =====================================
+             NOTIFICATION
+        ====================================== -->
+
+        <div
+          id="notification"
+          class="notification"
+          role="status"
+          aria-live="polite"
+        ></div>
+
+
+
+        <!-- =====================================
+             HINT
+        ====================================== -->
+
+        <div
+          id="hintBox"
+          class="hint-box"
+          hidden
+        ></div>
+
+      </div>
+
+    </section>
+
+  </main>
+
+
+
+  <!-- =========================================
+       RESULT MODAL
+  ========================================== -->
+
+  <div
+    id="resultModal"
+    class="result-modal"
+    aria-hidden="true"
+  >
+
+    <div class="result-card">
+
+
+      <div
+        id="resultIcon"
+        class="result-icon"
+      >
+        🎉
+      </div>
+
+
+      <span class="game-label">
+        MISSION COMPLETE
+      </span>
+
+
+      <h2 id="resultTitle">
+        Misi Berhasil!
+      </h2>
+
+
+      <p id="resultMessage">
+        Kamu berhasil menyusun seluruh planet!
+      </p>
+
+
+
+      <!-- RESULT STATS -->
+
+      <div class="result-stats">
+
+
+        <div>
+
+          <small>
+            SKOR
+          </small>
+
+          <strong id="finalScore">
+            0
+          </strong>
+
+        </div>
+
+
+        <div>
+
+          <small>
+            WAKTU
+          </small>
+
+          <strong id="finalTime">
+            0 detik
+          </strong>
+
+        </div>
+
+
+        <div>
+
+          <small>
+            KESALAHAN
+          </small>
+
+          <strong id="finalMistakes">
+            0
+          </strong>
+
+        </div>
+
+      </div>
+
+
+
+      <!-- FACT -->
+
+      <div class="planet-fact">
+
+        <span>
+          🌍
+        </span>
+
+        <div>
+
+          <strong>
+            Tahukah kamu?
+          </strong>
+
+          <p id="factText">
+            Bumi adalah planet ketiga dari Matahari.
+          </p>
+
+        </div>
+
+      </div>
+
+
+
+      <!-- RESULT BUTTON -->
+
+      <div class="result-actions">
+
+
+        <button
+          id="restartBtn"
+          class="check-order-btn"
+          type="button"
+        >
+
+          🔄 Main Lagi
+
+        </button>
+
+
+        <a
+          href="page_game.html"
+          class="back-game-btn"
+        >
+
+          ← Pilih Game
+
+        </a>
+
+      </div>
+
+    </div>
+
+  </div>
+
+
+
+  <!-- =========================================
+       FOOTER
+  ========================================== -->
+
+  <footer class="main-footer">
+
+    <div class="footer-container">
+
+
+      <div class="footer-column footer-brand">
+
+        <img
+          src="Png/Logo@4x.png"
+          alt="Logo Stellar Kids"
+          class="footer-logo"
+        >
+
+        <p>
+          Dibuat dengan penuh cinta dan inovasi
+          untuk astronot kecil Indonesia.
+        </p>
+
+      </div>
+
+
+
+      <div class="footer-column">
+
+        <h3>
+          Navigasi
+        </h3>
+
+        <ul class="footer-links">
+
+          <li>
+            <a href="index.html">
+              Beranda
+            </a>
+          </li>
+
+          <li>
+            <a href="tentangweb.html">
+              Tentang Web
+            </a>
+          </li>
+
+          <li>
+            <a href="page_game.html">
+              Games
+            </a>
+          </li>
+
+          <li>
+            <a href="index.html#pembelajaran">
+              Pembelajaran
+            </a>
+          </li>
+
+        </ul>
+
+      </div>
+
+
+
+      <div class="footer-column feedback-column">
+
+        <h3>
+          Yuk beri ulasan!
+        </h3>
+
+        <p>
+          Bagikan pendapatmu tentang Stellar Kids.
+        </p>
+
+
+        <form class="review-form" id="review-form">
+
+  <textarea
+    id="review-text"
+    name="review"
+    placeholder="Tulis ulasan Anda..."
+    rows="4"
+    required
+  ></textarea>
+
+  <button
+    type="submit"
+    class="submit-review-btn"
+  >
+    Kirim Ulasan
+  </button>
+
+        </form>
+
+      </div>
+
+    </div>
+
+
+
+    <div class="footer-bottom">
+
+      <p>
+        © Stellar Kids. All rights reserved.
+      </p>
+
+    </div>
+
+  </footer>
+
+</div>
+
+
+<!-- =========================================
+     JAVASCRIPT
+========================================== -->
+
+<script src="susunplanet.js"></script>
+
+<script src="ulasan.js"></script>
+
+</body>
+
+</html>

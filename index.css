@@ -1,0 +1,1263 @@
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Orbitron', 'Segoe UI', sans-serif;
+    color: #ffffff;
+    background: #05051a;
+    overflow-x: hidden;
+    line-height: 1.6;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+button,
+input,
+textarea {
+    font-family: inherit;
+}
+
+button {
+    border: none;
+}
+
+img {
+    display: block;
+    max-width: 100%;
+}
+
+
+/* =========================================================
+   2. BACKGROUND VIDEO
+========================================================= */
+
+.background-video {
+    position: fixed;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -10;
+    overflow: hidden;
+    background: #02020f;
+}
+
+.background-video video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* Lapisan gelap agar teks tetap terbaca */
+.background-overlay {
+    position: absolute;
+    inset: 0;
+
+    background:
+        linear-gradient(
+            180deg,
+            rgba(2, 5, 25, 0.65) 0%,
+            rgba(4, 5, 30, 0.45) 40%,
+            rgba(4, 5, 25, 0.85) 100%
+        );
+}
+
+
+/* =========================================================
+   3. HEADER
+========================================================= */
+
+.main-header {
+    position: fixed;
+    top: 0;
+    left: 0;
+
+    width: 100%;
+    height: 82px;
+
+    z-index: 1000;
+
+    background: rgba(3, 5, 25, 0.72);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.header-container {
+    width: min(1200px, calc(100% - 60px));
+    height: 100%;
+
+    margin: 0 auto;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+
+/* Logo */
+
+.logo {
+    display: flex;
+    align-items: center;
+}
+
+.logo-image {
+    width: 150px;
+    height: auto;
+    object-fit: contain;
+}
+
+
+/* Navigation */
+
+.main-nav {
+    display: flex;
+    align-items: center;
+}
+
+.nav-links {
+    list-style: none;
+
+    display: flex;
+    align-items: center;
+
+    gap: 38px;
+}
+
+.nav-links li {
+    position: relative;
+}
+
+.nav-links li a {
+    display: inline-block;
+
+    padding: 8px 0;
+
+    color: rgba(255, 255, 255, 0.82);
+
+    font-size: 0.88rem;
+    font-weight: 500;
+
+    transition:
+        color 0.3s ease,
+        transform 0.3s ease;
+}
+
+.nav-links li a:hover {
+    color: #ffffff;
+    transform: translateY(-2px);
+}
+
+.nav-links li a.active {
+    color: #ffcc00;
+}
+
+.nav-links li a.active::after {
+    content: "";
+
+    position: absolute;
+    left: 0;
+    bottom: 0;
+
+    width: 100%;
+    height: 2px;
+
+    background: #ffcc00;
+    border-radius: 10px;
+
+    box-shadow: 0 0 10px rgba(255, 204, 0, 0.6);
+}
+
+
+/* Burger */
+
+.burger {
+    display: none;
+
+    width: 42px;
+    height: 42px;
+
+    padding: 8px;
+
+    background: transparent;
+    cursor: pointer;
+}
+
+.burger span {
+    display: block;
+
+    width: 25px;
+    height: 2px;
+
+    margin: 5px auto;
+
+    background: #ffffff;
+    border-radius: 10px;
+
+    transition: 0.3s ease;
+}
+
+
+/* =========================================================
+   4. HERO SECTION
+========================================================= */
+
+.hero {
+    position: relative;
+
+    min-height: 100vh;
+
+    display: flex;
+    align-items: center;
+
+    padding: 120px 0 80px;
+
+    background:
+        radial-gradient(
+            circle at 75% 45%,
+            rgba(0, 247, 255, 0.08),
+            transparent 35%
+        );
+}
+
+.hero-container {
+    width: min(1200px, calc(100% - 60px));
+
+    margin: 0 auto;
+
+    display: grid;
+    grid-template-columns: 1.1fr 0.9fr;
+
+    align-items: center;
+
+    gap: 50px;
+}
+
+
+/* Hero Content */
+
+.hero-content {
+    max-width: 650px;
+}
+
+.hero-label {
+    display: inline-block;
+
+    margin-bottom: 18px;
+    padding: 7px 15px;
+
+    color: #00f7ff;
+
+    font-size: 0.72rem;
+    font-weight: 600;
+
+    letter-spacing: 2px;
+    text-transform: uppercase;
+
+    background: rgba(0, 247, 255, 0.08);
+
+    border: 1px solid rgba(0, 247, 255, 0.25);
+    border-radius: 30px;
+}
+
+.hero-content h1 {
+    margin-bottom: 8px;
+
+    color: #ffffff;
+
+    font-size: clamp(2.6rem, 5vw, 4.8rem);
+    line-height: 1.05;
+
+    font-weight: 700;
+
+    text-shadow:
+        0 0 30px rgba(0, 247, 255, 0.12);
+}
+
+.hero-content h2 {
+    margin-bottom: 25px;
+
+    color: #ffcc00;
+
+    font-size: clamp(1.15rem, 2vw, 1.65rem);
+    line-height: 1.4;
+
+    font-weight: 500;
+}
+
+.hero-content p {
+    max-width: 600px;
+
+    margin-bottom: 32px;
+
+    color: rgba(255, 255, 255, 0.72);
+
+    font-family: 'Segoe UI', sans-serif;
+
+    font-size: 1rem;
+    line-height: 1.8;
+}
+
+
+/* Hero Buttons */
+
+.hero-buttons {
+    display: flex;
+    align-items: center;
+
+    gap: 14px;
+    flex-wrap: wrap;
+}
+
+.btn {
+    display: inline-flex;
+
+    align-items: center;
+    justify-content: center;
+
+    min-height: 48px;
+
+    padding: 0 24px;
+
+    border-radius: 30px;
+
+    font-size: 0.85rem;
+    font-weight: 600;
+
+    transition:
+        transform 0.3s ease,
+        box-shadow 0.3s ease,
+        background 0.3s ease;
+}
+
+.btn:hover {
+    transform: translateY(-3px);
+}
+
+
+/* Primary */
+
+.btn-primary {
+    color: #050505;
+
+    background: #ffcc00;
+
+    box-shadow:
+        0 8px 25px rgba(255, 204, 0, 0.2);
+}
+
+.btn-primary:hover {
+    background: #ffd633;
+
+    box-shadow:
+        0 12px 30px rgba(255, 204, 0, 0.35);
+}
+
+
+/* Secondary */
+
+.btn-secondary {
+    color: #ffffff;
+
+    background: rgba(255, 255, 255, 0.06);
+
+    border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.btn-secondary:hover {
+    background: rgba(255, 255, 255, 0.12);
+}
+
+
+/* Hero Illustration */
+
+.hero-illustration {
+    display: flex;
+
+    justify-content: center;
+    align-items: center;
+
+    position: relative;
+}
+
+.hero-illustration::before {
+    content: "";
+
+    position: absolute;
+
+    width: 400px;
+    height: 400px;
+
+    background:
+        radial-gradient(
+            circle,
+            rgba(0, 247, 255, 0.18),
+            transparent 68%
+        );
+
+    filter: blur(15px);
+
+    z-index: -1;
+}
+
+.astronaut-img {
+    width: min(440px, 100%);
+
+    animation:
+        astronautFloat 4s ease-in-out infinite;
+
+    filter:
+        drop-shadow(0 20px 30px rgba(0, 0, 0, 0.45))
+        drop-shadow(0 0 20px rgba(0, 247, 255, 0.12));
+}
+
+@keyframes astronautFloat {
+
+    0%,
+    100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-15px);
+    }
+}
+
+
+/* =========================================================
+   5. LEARNING SECTION
+========================================================= */
+
+.learning-highlights {
+    position: relative;
+
+    padding: 110px 0 90px;
+
+    background:
+        linear-gradient(
+            180deg,
+            #00a8bd 0%,
+            #07536e 25%,
+            #10102e 75%,
+            #05051a 100%
+        );
+
+    overflow: hidden;
+}
+
+
+/* Decorative glow */
+
+.learning-highlights::before {
+    content: "";
+
+    position: absolute;
+
+    width: 600px;
+    height: 600px;
+
+    top: 10%;
+    left: -250px;
+
+    background:
+        radial-gradient(
+            circle,
+            rgba(0, 247, 255, 0.12),
+            transparent 70%
+        );
+
+    pointer-events: none;
+}
+
+
+/* Wave */
+
+.wave-container {
+    position: absolute;
+
+    top: -1px;
+    left: 0;
+
+    width: 100%;
+    height: 100px;
+
+    overflow: hidden;
+
+    z-index: 1;
+}
+
+.wave {
+    position: absolute;
+
+    top: 0;
+    left: 0;
+
+    width: 100%;
+    height: 100%;
+}
+
+.wave path {
+    fill: #00f7ff;
+}
+
+
+/* Section Container */
+
+.section-container {
+    position: relative;
+
+    width: min(1200px, calc(100% - 60px));
+
+    margin: 0 auto;
+
+    z-index: 2;
+}
+
+
+/* Section Heading */
+
+.section-heading {
+    max-width: 700px;
+
+    margin: 0 auto 45px;
+
+    text-align: center;
+}
+
+.section-label {
+    display: inline-block;
+
+    margin-bottom: 12px;
+
+    color: #00f7ff;
+
+    font-size: 0.7rem;
+    font-weight: 600;
+
+    letter-spacing: 2px;
+    text-transform: uppercase;
+}
+
+.section-heading h2 {
+    margin-bottom: 12px;
+
+    color: #ffffff;
+
+    font-size: clamp(1.8rem, 4vw, 2.8rem);
+
+    line-height: 1.2;
+}
+
+.section-heading p {
+    color: rgba(255, 255, 255, 0.68);
+
+    font-family: 'Segoe UI', sans-serif;
+
+    font-size: 0.95rem;
+}
+
+
+/* =========================================================
+   6. CAROUSEL
+========================================================= */
+
+.carousel-wrapper {
+    position: relative;
+}
+
+.carousel-container {
+    display: grid;
+
+    grid-template-columns:
+        repeat(4, minmax(0, 1fr));
+
+    gap: 20px;
+
+    overflow: hidden;
+}
+
+
+/* Card */
+
+.carousel-item {
+    min-width: 0;
+
+    display: flex;
+    flex-direction: column;
+
+    overflow: hidden;
+
+    background:
+        rgba(255, 255, 255, 0.07);
+
+    border:
+        1px solid rgba(255, 255, 255, 0.1);
+
+    border-radius: 18px;
+
+    box-shadow:
+        0 15px 40px rgba(0, 0, 0, 0.25);
+
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+
+    transition:
+        transform 0.3s ease,
+        border-color 0.3s ease,
+        box-shadow 0.3s ease;
+}
+
+.carousel-item:hover {
+    transform: translateY(-8px);
+
+    border-color:
+        rgba(0, 247, 255, 0.35);
+
+    box-shadow:
+        0 20px 45px rgba(0, 0, 0, 0.35);
+}
+
+
+/* Thumbnail */
+
+.thumbnail-wrapper {
+    position: relative;
+
+    width: 100%;
+
+    overflow: hidden;
+
+    aspect-ratio: 16 / 10;
+}
+
+.video-thumb {
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+
+    transition:
+        transform 0.5s ease;
+}
+
+.carousel-item:hover .video-thumb {
+    transform: scale(1.05);
+}
+
+
+/* Category */
+
+.video-category {
+    position: absolute;
+
+    top: 12px;
+    left: 12px;
+
+    padding: 5px 10px;
+
+    color: #ffffff;
+
+    background: rgba(0, 0, 0, 0.6);
+
+    border:
+        1px solid rgba(255, 255, 255, 0.15);
+
+    border-radius: 20px;
+
+    font-size: 0.65rem;
+
+    backdrop-filter: blur(5px);
+}
+
+
+/* Card Content */
+
+.card-content {
+    display: flex;
+    flex-direction: column;
+
+    flex: 1;
+
+    padding: 20px;
+}
+
+.carousel-item h3 {
+    margin-bottom: 9px;
+
+    color: #ffffff;
+
+    font-size: 1rem;
+    line-height: 1.4;
+}
+
+.carousel-item p {
+    flex: 1;
+
+    margin-bottom: 18px;
+
+    color: rgba(255, 255, 255, 0.62);
+
+    font-family: 'Segoe UI', sans-serif;
+
+    font-size: 0.85rem;
+    line-height: 1.6;
+}
+
+
+/* Video Button */
+
+.learn-more-btn {
+    align-self: flex-start;
+
+    padding: 9px 17px;
+
+    color: #050505;
+
+    background: #ffcc00;
+
+    border-radius: 25px;
+
+    font-size: 0.72rem;
+    font-weight: 600;
+
+    cursor: pointer;
+
+    transition:
+        transform 0.3s ease,
+        background 0.3s ease;
+}
+
+.learn-more-btn:hover {
+    transform: translateY(-2px);
+
+    background: #ffd633;
+}
+
+
+/* =========================================================
+   7. CAROUSEL CONTROLS
+========================================================= */
+
+.carousel-controls {
+    display: flex;
+
+    justify-content: center;
+    align-items: center;
+
+    gap: 18px;
+
+    margin-top: 30px;
+}
+
+.carousel-arrow {
+    width: 42px;
+    height: 42px;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    color: #050505;
+
+    background: #ffcc00;
+
+    border-radius: 50%;
+
+    font-size: 1rem;
+
+    cursor: pointer;
+
+    transition:
+        transform 0.3s ease,
+        background 0.3s ease;
+}
+
+.carousel-arrow:hover {
+    transform: scale(1.08);
+
+    background: #ffd633;
+}
+
+.carousel-dots {
+    display: flex;
+
+    align-items: center;
+
+    gap: 7px;
+}
+
+.carousel-dots span {
+    width: 7px;
+    height: 7px;
+
+    display: block;
+
+    background: rgba(255, 255, 255, 0.35);
+
+    border-radius: 50%;
+
+    transition:
+        width 0.3s ease,
+        background 0.3s ease;
+}
+
+.carousel-dots span.active {
+    width: 22px;
+
+    background: #ffcc00;
+
+    border-radius: 10px;
+}
+
+
+/* =========================================================
+   8. FOOTER
+========================================================= */
+
+.main-footer {
+    position: relative;
+
+    padding: 70px 0 0;
+
+    background:
+        linear-gradient(
+            180deg,
+            #070722 0%,
+            #030311 100%
+        );
+
+    border-top:
+        1px solid rgba(255, 255, 255, 0.08);
+}
+
+.footer-container {
+    width: min(1200px, calc(100% - 60px));
+
+    margin: 0 auto;
+
+    display: grid;
+
+    grid-template-columns:
+        1.3fr
+        0.7fr
+        1fr;
+
+    gap: 60px;
+}
+
+
+/* Footer Column */
+
+.footer-column {
+    display: flex;
+    flex-direction: column;
+
+    gap: 15px;
+}
+
+.footer-column h3 {
+    color: #ffffff;
+
+    font-size: 0.95rem;
+
+    margin-bottom: 3px;
+}
+
+.footer-column p {
+    color: rgba(255, 255, 255, 0.55);
+
+    font-family: 'Segoe UI', sans-serif;
+
+    font-size: 0.85rem;
+
+    line-height: 1.7;
+}
+
+
+/* Footer Logo */
+
+.footer-logo {
+    width: 180px;
+    height: auto;
+
+    margin-bottom: 5px;
+}
+
+
+/* Footer Navigation */
+
+.footer-links {
+    list-style: none;
+
+    display: flex;
+    flex-direction: column;
+
+    gap: 10px;
+}
+
+.footer-links li a {
+    color: rgba(255, 255, 255, 0.55);
+
+    font-family: 'Segoe UI', sans-serif;
+
+    font-size: 0.85rem;
+
+    transition:
+        color 0.3s ease,
+        padding-left 0.3s ease;
+}
+
+.footer-links li a:hover {
+    color: #ffcc00;
+
+    padding-left: 5px;
+}
+
+
+/* =========================================================
+   9. REVIEW FORM
+========================================================= */
+
+.review-form {
+    display: flex;
+    flex-direction: column;
+
+    gap: 10px;
+}
+
+.review-form textarea {
+    width: 100%;
+
+    min-height: 100px;
+
+    padding: 12px 14px;
+
+    color: #ffffff;
+
+    background: rgba(255, 255, 255, 0.07);
+
+    border:
+        1px solid rgba(255, 255, 255, 0.12);
+
+    border-radius: 10px;
+
+    outline: none;
+
+    resize: vertical;
+
+    font-family: 'Segoe UI', sans-serif;
+
+    font-size: 0.85rem;
+
+    transition:
+        border-color 0.3s ease,
+        background 0.3s ease;
+}
+
+.review-form textarea::placeholder {
+    color: rgba(255, 255, 255, 0.4);
+}
+
+.review-form textarea:focus {
+    background: rgba(255, 255, 255, 0.1);
+
+    border-color:
+        rgba(0, 247, 255, 0.5);
+}
+
+.submit-review-btn {
+    align-self: flex-start;
+
+    padding: 10px 20px;
+
+    color: #050505;
+
+    background: #ffcc00;
+
+    border-radius: 8px;
+
+    font-size: 0.75rem;
+    font-weight: 600;
+
+    cursor: pointer;
+
+    transition:
+        transform 0.3s ease,
+        background 0.3s ease;
+}
+
+.submit-review-btn:hover {
+    transform: translateY(-2px);
+
+    background: #ffd633;
+}
+
+
+/* =========================================================
+   10. FOOTER BOTTOM
+========================================================= */
+
+.footer-bottom {
+    width: min(1200px, calc(100% - 60px));
+
+    margin: 55px auto 0;
+
+    padding: 20px 0;
+
+    text-align: center;
+
+    border-top:
+        1px solid rgba(255, 255, 255, 0.08);
+}
+
+.footer-bottom p {
+    color: rgba(255, 255, 255, 0.4);
+
+    font-family: 'Segoe UI', sans-serif;
+
+    font-size: 0.75rem;
+}
+
+
+/* =========================================================
+   11. TABLET
+========================================================= */
+
+@media (max-width: 1000px) {
+
+    .nav-links {
+        gap: 22px;
+    }
+
+    .hero-container {
+        grid-template-columns: 1fr 0.8fr;
+
+        gap: 30px;
+    }
+
+    .carousel-container {
+        grid-template-columns:
+            repeat(2, minmax(0, 1fr));
+    }
+
+    .footer-container {
+        grid-template-columns:
+            1fr 1fr;
+
+        gap: 40px;
+    }
+
+    .feedback-column {
+        grid-column: 1 / -1;
+    }
+}
+
+
+/* =========================================================
+   12. MOBILE
+========================================================= */
+
+@media (max-width: 768px) {
+
+    /* Header */
+
+    .main-header {
+        height: 70px;
+    }
+
+    .header-container {
+        width: calc(100% - 35px);
+    }
+
+    .logo-image {
+        width: 125px;
+    }
+
+    .nav-links {
+        display: none;
+    }
+
+    .burger {
+        display: block;
+    }
+
+
+    /* Hero */
+
+    .hero {
+        padding:
+            110px 0
+            60px;
+    }
+
+    .hero-container {
+        width: calc(100% - 35px);
+
+        grid-template-columns: 1fr;
+
+        text-align: center;
+
+        gap: 30px;
+    }
+
+    .hero-content {
+        max-width: 100%;
+    }
+
+    .hero-content h1 {
+        font-size: 2.5rem;
+    }
+
+    .hero-content h2 {
+        font-size: 1.15rem;
+    }
+
+    .hero-content p {
+        font-size: 0.9rem;
+    }
+
+    .hero-buttons {
+        justify-content: center;
+    }
+
+    .hero-illustration {
+        order: -1;
+    }
+
+    .astronaut-img {
+        width: min(300px, 75vw);
+    }
+
+
+    /* Learning */
+
+    .learning-highlights {
+        padding:
+            90px 0
+            60px;
+    }
+
+    .section-container {
+        width: calc(100% - 35px);
+    }
+
+    .section-heading {
+        margin-bottom: 30px;
+    }
+
+    .section-heading h2 {
+        font-size: 1.8rem;
+    }
+
+
+    /* Cards */
+
+    .carousel-container {
+        grid-template-columns: 1fr;
+    }
+
+    .carousel-item {
+        width: 100%;
+    }
+
+
+    /* Footer */
+
+    .main-footer {
+        padding-top: 50px;
+    }
+
+    .footer-container {
+        width: calc(100% - 35px);
+
+        grid-template-columns: 1fr;
+
+        gap: 35px;
+    }
+
+    .feedback-column {
+        grid-column: auto;
+    }
+
+    .footer-logo {
+        width: 150px;
+    }
+
+    .footer-bottom {
+        width: calc(100% - 35px);
+
+        margin-top: 40px;
+    }
+}
+
+
+/* =========================================================
+   13. SMALL MOBILE
+========================================================= */
+
+@media (max-width: 480px) {
+
+    .hero-content h1 {
+        font-size: 2.1rem;
+    }
+
+    .hero-content h2 {
+        font-size: 1rem;
+    }
+
+    .hero-content p {
+        font-size: 0.85rem;
+    }
+
+    .hero-buttons {
+        flex-direction: column;
+
+        width: 100%;
+    }
+
+    .btn {
+        width: 100%;
+    }
+
+    .carousel-item {
+        border-radius: 14px;
+    }
+
+    .carousel-arrow {
+        width: 38px;
+        height: 38px;
+    }
+}
+
+
+/* =========================================================
+   14. REDUCED MOTION
+========================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+
+    html {
+        scroll-behavior: auto;
+    }
+
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+    }
+}

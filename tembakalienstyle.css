@@ -1,0 +1,1662 @@
+/* =========================================================
+   STELLAR KIDS
+   TEMBAK ALIEN
+   ========================================================= */
+
+
+/* =========================================================
+   RESET
+========================================================= */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  width: 100%;
+  min-height: 100vh;
+
+  background: #02030a;
+
+  color: #ffffff;
+
+  font-family: "Poppins", sans-serif;
+
+  overflow-x: hidden;
+}
+
+
+/* =========================================================
+   BACKGROUND VIDEO
+========================================================= */
+
+.background-video {
+  position: fixed;
+
+  inset: 0;
+
+  width: 100vw;
+  height: 100vh;
+
+  overflow: hidden;
+
+  z-index: -10;
+
+  pointer-events: none;
+}
+
+.background-video video {
+  position: absolute;
+
+  top: 50%;
+  left: 50%;
+
+  width: 100%;
+  height: 100%;
+
+  min-width: 100%;
+  min-height: 100%;
+
+  object-fit: cover;
+
+  transform:
+    translate(-50%, -50%);
+}
+
+.background-overlay {
+  position: absolute;
+
+  inset: 0;
+
+  width: 100%;
+  height: 100%;
+
+  background:
+    linear-gradient(
+      180deg,
+      rgba(2, 5, 18, 0.35) 0%,
+      rgba(2, 5, 18, 0.55) 45%,
+      rgba(2, 3, 10, 0.96) 100%
+    );
+
+  pointer-events: none;
+}
+
+
+/* =========================================================
+   HEADER
+========================================================= */
+
+.main-header {
+  position: fixed;
+
+  top: 0;
+  left: 0;
+
+  width: 100%;
+
+  z-index: 1000;
+
+  background:
+    rgba(3, 7, 20, 0.68);
+
+  border-bottom:
+    1px solid
+    rgba(255, 255, 255, 0.08);
+
+  backdrop-filter:
+    blur(18px);
+
+  -webkit-backdrop-filter:
+    blur(18px);
+}
+
+.header-container {
+  width:
+    min(
+      1200px,
+      calc(100% - 60px)
+    );
+
+  min-height: 82px;
+
+  margin: 0 auto;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: space-between;
+}
+
+
+/* LOGO */
+
+.logo {
+  display: flex;
+
+  align-items: center;
+
+  text-decoration: none;
+}
+
+.logo-image {
+  display: block;
+
+  width: 145px;
+
+  height: auto;
+}
+
+
+/* NAVIGATION */
+
+.main-nav {
+  display: flex;
+
+  align-items: center;
+}
+
+.nav-links {
+  display: flex;
+
+  align-items: center;
+
+  gap: 36px;
+
+  list-style: none;
+}
+
+.nav-links a {
+  position: relative;
+
+  color:
+    rgba(255, 255, 255, 0.76);
+
+  text-decoration: none;
+
+  font-size: 13px;
+
+  font-weight: 500;
+
+  transition:
+    color 0.3s ease;
+}
+
+.nav-links a::after {
+  content: "";
+
+  position: absolute;
+
+  left: 0;
+
+  bottom: -9px;
+
+  width: 0;
+
+  height: 2px;
+
+  border-radius: 10px;
+
+  background: #00f7ff;
+
+  box-shadow:
+    0 0 8px
+    rgba(0, 247, 255, 0.9);
+
+  transition:
+    width 0.3s ease;
+}
+
+.nav-links a:hover,
+.nav-links a.active {
+  color: #ffffff;
+}
+
+.nav-links a:hover::after,
+.nav-links a.active::after {
+  width: 100%;
+}
+
+
+/* BURGER */
+
+.burger {
+  display: none;
+
+  width: 42px;
+  height: 42px;
+
+  border:
+    1px solid
+    rgba(255, 255, 255, 0.15);
+
+  border-radius: 10px;
+
+  background:
+    rgba(255, 255, 255, 0.05);
+
+  cursor: pointer;
+
+  align-items: center;
+
+  justify-content: center;
+
+  flex-direction: column;
+
+  gap: 5px;
+}
+
+.burger span {
+  display: block;
+
+  width: 20px;
+  height: 2px;
+
+  border-radius: 10px;
+
+  background: #ffffff;
+}
+
+
+/* =========================================================
+   GAME SECTION
+========================================================= */
+
+.game-section {
+  position: relative;
+
+  width: 100%;
+
+  min-height: 100vh;
+
+  padding:
+    140px
+    20px
+    80px;
+
+  z-index: 2;
+}
+
+
+/* =========================================================
+   PAGE CONTAINER
+   PENTING:
+   INI BUKAN GAME AREA
+========================================================= */
+
+.game-page-container {
+  position: relative;
+
+  width:
+    min(
+      1050px,
+      100%
+    );
+
+  margin: 0 auto;
+}
+
+
+/* =========================================================
+   GAME HEADER
+========================================================= */
+
+.game-header {
+  width: 100%;
+
+  max-width: 720px;
+
+  margin:
+    0 auto 28px;
+
+  text-align: center;
+}
+
+.game-label {
+  display: inline-flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  padding:
+    8px 15px;
+
+  margin-bottom: 15px;
+
+  border:
+    1px solid
+    rgba(0, 247, 255, 0.3);
+
+  border-radius: 999px;
+
+  background:
+    rgba(0, 247, 255, 0.07);
+
+  color: #00f7ff;
+
+  font-family: "Orbitron", sans-serif;
+
+  font-size: 10px;
+
+  font-weight: 600;
+
+  letter-spacing: 2px;
+
+  box-shadow:
+    0 0 25px
+    rgba(0, 247, 255, 0.08);
+}
+
+.game-header h1 {
+  margin-bottom: 12px;
+
+  color: #ffffff;
+
+  font-family: "Orbitron", sans-serif;
+
+  font-size:
+    clamp(
+      34px,
+      5vw,
+      58px
+    );
+
+  line-height: 1.05;
+
+  text-shadow:
+    0 0 20px
+    rgba(0, 247, 255, 0.2);
+}
+
+.game-header p {
+  color:
+    rgba(255, 255, 255, 0.67);
+
+  font-size: 14px;
+
+  line-height: 1.8;
+}
+
+.game-header strong {
+  color: #00f7ff;
+
+  font-family: "Orbitron", sans-serif;
+
+  font-size: 12px;
+}
+
+
+/* =========================================================
+   GAME HUD
+========================================================= */
+
+.game-hud {
+  width:
+    min(
+      700px,
+      100%
+    );
+
+  margin:
+    0 auto 18px;
+
+  display: grid;
+
+  grid-template-columns:
+    repeat(2, 1fr);
+
+  gap: 12px;
+}
+
+.hud-item {
+  display: flex;
+
+  align-items: center;
+
+  gap: 14px;
+
+  padding:
+    14px 20px;
+
+  background:
+    rgba(7, 12, 34, 0.72);
+
+  border:
+    1px solid
+    rgba(255, 255, 255, 0.1);
+
+  border-radius: 14px;
+
+  backdrop-filter:
+    blur(14px);
+
+  -webkit-backdrop-filter:
+    blur(14px);
+
+  box-shadow:
+    0 10px 40px
+    rgba(0, 0, 0, 0.2);
+}
+
+.hud-icon {
+  width: 42px;
+  height: 42px;
+
+  flex-shrink: 0;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  border-radius: 11px;
+
+  background:
+    rgba(0, 247, 255, 0.08);
+
+  border:
+    1px solid
+    rgba(0, 247, 255, 0.18);
+
+  font-size: 19px;
+}
+
+.hud-info {
+  min-width: 0;
+}
+
+.hud-label {
+  display: block;
+
+  margin-bottom: 2px;
+
+  color:
+    rgba(255, 255, 255, 0.45);
+
+  font-family: "Orbitron", sans-serif;
+
+  font-size: 8px;
+
+  letter-spacing: 1.5px;
+}
+
+.hud-value {
+  display: flex;
+
+  align-items: baseline;
+
+  gap: 5px;
+}
+
+.hud-item strong {
+  color: #00f7ff;
+
+  font-family: "Orbitron", sans-serif;
+
+  font-size: 22px;
+}
+
+.hud-item small {
+  color:
+    rgba(255, 255, 255, 0.5);
+
+  font-size: 10px;
+}
+
+
+/* =========================================================
+   GAME STAGE WRAPPER
+========================================================= */
+
+.game-stage-wrapper {
+  position: relative;
+
+  width:
+    min(
+      700px,
+      100%
+    );
+
+  margin: 0 auto;
+
+  padding: 7px;
+
+  border-radius: 22px;
+
+  background:
+    linear-gradient(
+      135deg,
+      rgba(0, 247, 255, 0.28),
+      rgba(128, 76, 255, 0.12),
+      rgba(255, 255, 255, 0.06)
+    );
+
+  box-shadow:
+    0 25px 80px
+    rgba(0, 0, 0, 0.45),
+
+    0 0 60px
+    rgba(0, 247, 255, 0.05);
+}
+
+.game-stage-wrapper::before {
+  content: "";
+
+  position: absolute;
+
+  top: 15%;
+  left: -10%;
+  right: -10%;
+  bottom: 15%;
+
+  background:
+    rgba(0, 247, 255, 0.07);
+
+  filter: blur(70px);
+
+  z-index: -1;
+}
+
+
+/* =========================================================
+   GAME CONTAINER
+   INI ARENA PERMAINAN SEBENARNYA
+========================================================= */
+
+.game-container {
+  position: relative;
+
+  width: 100%;
+
+  height: 520px;
+
+  overflow: hidden;
+
+  border-radius: 17px;
+
+  background:
+    radial-gradient(
+      circle at 50% 100%,
+      rgba(0, 247, 255, 0.09),
+      transparent 35%
+    ),
+
+    linear-gradient(
+      180deg,
+      rgba(4, 8, 30, 0.92),
+      rgba(2, 4, 18, 0.98)
+    );
+
+  border:
+    1px solid
+    rgba(255, 255, 255, 0.1);
+
+  outline: none;
+
+  box-shadow:
+    inset 0 0 60px
+    rgba(0, 0, 0, 0.45);
+}
+
+
+/* =========================================================
+   GAME GRID
+========================================================= */
+
+.game-grid {
+  position: absolute;
+
+  inset: 0;
+
+  pointer-events: none;
+
+  opacity: 0.25;
+
+  background-image:
+
+    linear-gradient(
+      rgba(0, 247, 255, 0.08) 1px,
+      transparent 1px
+    ),
+
+    linear-gradient(
+      90deg,
+      rgba(0, 247, 255, 0.08) 1px,
+      transparent 1px
+    );
+
+  background-size:
+    50px 50px;
+
+  mask-image:
+    linear-gradient(
+      to bottom,
+      transparent,
+      black 30%,
+      black 75%,
+      transparent
+    );
+}
+
+
+/* =========================================================
+   START MESSAGE
+========================================================= */
+
+.game-start-message {
+  position: absolute;
+
+  top: 50%;
+  left: 50%;
+
+  transform:
+    translate(
+      -50%,
+      -50%
+    );
+
+  width:
+    min(
+      380px,
+      80%
+    );
+
+  padding: 28px;
+
+  text-align: center;
+
+  border-radius: 18px;
+
+  background:
+    rgba(5, 10, 30, 0.68);
+
+  border:
+    1px solid
+    rgba(0, 247, 255, 0.15);
+
+  backdrop-filter:
+    blur(10px);
+
+  z-index: 5;
+}
+
+.start-icon {
+  margin-bottom: 10px;
+
+  font-size: 44px;
+
+  filter:
+    drop-shadow(
+      0 0 15px
+      rgba(0, 247, 255, 0.5)
+    );
+}
+
+.game-start-message h2 {
+  margin-bottom: 8px;
+
+  font-family: "Orbitron", sans-serif;
+
+  font-size: 20px;
+}
+
+.game-start-message p {
+  color:
+    rgba(255, 255, 255, 0.58);
+
+  font-size: 12px;
+
+  line-height: 1.7;
+}
+
+
+/* =========================================================
+   SPACESHIP
+========================================================= */
+
+.spaceship {
+  position: absolute;
+
+  left: 50%;
+
+  bottom: 18px;
+
+  width: 55px;
+
+  height: auto;
+
+  transform:
+    translateX(-50%);
+
+  z-index: 20;
+
+  user-select: none;
+
+  pointer-events: none;
+
+  filter:
+
+    drop-shadow(
+      0 0 10px
+      rgba(0, 247, 255, 0.8)
+    )
+
+    drop-shadow(
+      0 0 25px
+      rgba(0, 247, 255, 0.25)
+    );
+
+  transition:
+    filter 0.15s ease;
+}
+
+
+/* =========================================================
+   ALIEN
+========================================================= */
+
+.alien {
+  position: absolute;
+
+  width: 48px;
+
+  height: auto;
+
+  z-index: 10;
+
+  user-select: none;
+
+  pointer-events: none;
+
+  filter:
+
+    drop-shadow(
+      0 0 8px
+      rgba(170, 70, 255, 0.75)
+    )
+
+    drop-shadow(
+      0 0 18px
+      rgba(170, 70, 255, 0.3)
+    );
+
+  animation:
+    alienFloat
+    1.4s
+    ease-in-out
+    infinite
+    alternate;
+}
+
+@keyframes alienFloat {
+
+  from {
+    transform:
+      translateY(0);
+  }
+
+  to {
+    transform:
+      translateY(3px);
+  }
+
+}
+
+
+/* =========================================================
+   BULLET
+========================================================= */
+
+.bullet {
+  position: absolute;
+
+  width: 13px;
+
+  height: auto;
+
+  z-index: 15;
+
+  pointer-events: none;
+
+  filter:
+
+    drop-shadow(
+      0 0 6px
+      rgba(0, 247, 255, 1)
+    )
+
+    drop-shadow(
+      0 0 14px
+      rgba(0, 247, 255, 0.7)
+    );
+}
+
+
+/* =========================================================
+   GAME BUTTONS
+========================================================= */
+
+.game-controls {
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  gap: 12px;
+
+  margin-top: 22px;
+}
+
+.game-btn {
+  min-width: 170px;
+
+  padding:
+    13px 22px;
+
+  border-radius: 11px;
+
+  font-family:
+    "Poppins",
+    sans-serif;
+
+  font-size: 12px;
+
+  font-weight: 600;
+
+  cursor: pointer;
+
+  text-decoration: none;
+
+  display: inline-flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  gap: 8px;
+
+  transition:
+
+    transform 0.25s ease,
+
+    box-shadow 0.25s ease,
+
+    background 0.25s ease;
+}
+
+.game-btn:hover {
+  transform:
+    translateY(-2px);
+}
+
+.game-btn.primary {
+  color: #021016;
+
+  border:
+    1px solid
+    #00f7ff;
+
+  background:
+    #00f7ff;
+
+  box-shadow:
+    0 0 20px
+    rgba(0, 247, 255, 0.18);
+}
+
+.game-btn.primary:hover {
+  box-shadow:
+    0 0 30px
+    rgba(0, 247, 255, 0.4);
+}
+
+.game-btn.secondary {
+  color: #ffffff;
+
+  border:
+    1px solid
+    rgba(255, 255, 255, 0.15);
+
+  background:
+    rgba(255, 255, 255, 0.06);
+}
+
+.game-btn.secondary:hover {
+  background:
+    rgba(255, 255, 255, 0.1);
+}
+
+
+/* =========================================================
+   CONTROL GUIDE
+========================================================= */
+
+.control-guide {
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  flex-wrap: wrap;
+
+  gap: 8px;
+
+  margin-top: 18px;
+
+  color:
+    rgba(255, 255, 255, 0.45);
+
+  font-size: 10px;
+}
+
+.keyboard-key {
+  min-width: 30px;
+
+  height: 28px;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  padding: 0 8px;
+
+  border-radius: 6px;
+
+  background:
+    rgba(255, 255, 255, 0.08);
+
+  border:
+    1px solid
+    rgba(255, 255, 255, 0.12);
+
+  color:
+    rgba(255, 255, 255, 0.8);
+
+  font-family:
+    "Orbitron",
+    sans-serif;
+
+  font-size: 10px;
+
+  box-shadow:
+    0 3px 0
+    rgba(255, 255, 255, 0.06);
+}
+
+.space-key {
+  padding:
+    0 15px;
+
+  margin-left: 10px;
+}
+
+
+/* =========================================================
+   GAME RESULT TEXT
+========================================================= */
+
+.game-result {
+  min-height: 25px;
+
+  margin-top: 15px;
+
+  text-align: center;
+
+  color: #00f7ff;
+
+  font-family:
+    "Orbitron",
+    sans-serif;
+
+  font-size: 12px;
+
+  letter-spacing: 0.5px;
+}
+
+
+/* =========================================================
+   RESULT MODAL
+========================================================= */
+
+.result-modal {
+  position: fixed;
+
+  inset: 0;
+
+  z-index: 2000;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  padding: 20px;
+
+  background:
+    rgba(1, 3, 12, 0.78);
+
+  backdrop-filter:
+    blur(14px);
+
+  -webkit-backdrop-filter:
+    blur(14px);
+
+  opacity: 0;
+
+  visibility: hidden;
+
+  pointer-events: none;
+
+  transition:
+
+    opacity 0.3s ease,
+
+    visibility 0.3s ease;
+}
+
+.result-modal.show {
+  opacity: 1;
+
+  visibility: visible;
+
+  pointer-events: auto;
+}
+
+.result-card {
+  width:
+    min(
+      450px,
+      100%
+    );
+
+  padding:
+    40px 30px;
+
+  text-align: center;
+
+  border-radius: 22px;
+
+  background:
+
+    linear-gradient(
+      145deg,
+      rgba(13, 21, 53, 0.96),
+      rgba(4, 8, 25, 0.96)
+    );
+
+  border:
+    1px solid
+    rgba(0, 247, 255, 0.2);
+
+  box-shadow:
+
+    0 30px 100px
+    rgba(0, 0, 0, 0.6),
+
+    0 0 50px
+    rgba(0, 247, 255, 0.08);
+
+  transform:
+    translateY(20px)
+    scale(0.96);
+
+  transition:
+    transform 0.35s ease;
+}
+
+.result-modal.show .result-card {
+  transform:
+    translateY(0)
+    scale(1);
+}
+
+.result-icon {
+  margin-bottom: 12px;
+
+  font-size: 48px;
+
+  filter:
+    drop-shadow(
+      0 0 15px
+      rgba(0, 247, 255, 0.5)
+    );
+}
+
+.result-label {
+  color: #00f7ff;
+
+  font-family:
+    "Orbitron",
+    sans-serif;
+
+  font-size: 9px;
+
+  font-weight: 600;
+
+  letter-spacing: 2px;
+}
+
+.result-card h2 {
+  margin-top: 8px;
+
+  font-family:
+    "Orbitron",
+    sans-serif;
+
+  font-size: 26px;
+}
+
+.result-card > p {
+  margin-top: 8px;
+
+  color:
+    rgba(255, 255, 255, 0.55);
+
+  font-size: 12px;
+}
+
+.result-score {
+  margin:
+    25px auto 15px;
+
+  padding: 18px;
+
+  border-radius: 14px;
+
+  background:
+    rgba(0, 247, 255, 0.05);
+
+  border:
+    1px solid
+    rgba(0, 247, 255, 0.12);
+}
+
+.result-score span {
+  display: block;
+
+  margin-bottom: 4px;
+
+  color:
+    rgba(255, 255, 255, 0.4);
+
+  font-family:
+    "Orbitron",
+    sans-serif;
+
+  font-size: 8px;
+
+  letter-spacing: 1.5px;
+}
+
+.result-score strong {
+  color: #00f7ff;
+
+  font-family:
+    "Orbitron",
+    sans-serif;
+
+  font-size: 42px;
+
+  text-shadow:
+    0 0 20px
+    rgba(0, 247, 255, 0.4);
+}
+
+.result-message {
+  color:
+    rgba(255, 255, 255, 0.72);
+
+  font-size: 12px;
+
+  margin-bottom: 24px;
+}
+
+.result-actions {
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  gap: 10px;
+
+  flex-wrap: wrap;
+}
+
+
+/* =========================================================
+   FOOTER
+========================================================= */
+
+.main-footer {
+  position: relative;
+
+  z-index: 5;
+
+  padding-top: 65px;
+
+  background:
+
+    linear-gradient(
+      180deg,
+      transparent,
+      rgba(2, 3, 10, 0.92) 25%,
+      #02030a
+    );
+}
+
+.footer-container {
+  width:
+    min(
+      1100px,
+      calc(100% - 60px)
+    );
+
+  margin: 0 auto;
+
+  display: grid;
+
+  grid-template-columns:
+    1fr
+    0.6fr
+    1.2fr;
+
+  gap: 60px;
+
+  padding-bottom: 50px;
+}
+
+.footer-column h3 {
+  margin-bottom: 15px;
+
+  font-family:
+    "Orbitron",
+    sans-serif;
+
+  font-size: 13px;
+}
+
+.footer-column p {
+  color:
+    rgba(255, 255, 255, 0.48);
+
+  font-size: 11px;
+
+  line-height: 1.8;
+}
+
+.footer-logo {
+  width: 145px;
+
+  margin-bottom: 15px;
+}
+
+.footer-links {
+  list-style: none;
+
+  display: flex;
+
+  flex-direction: column;
+
+  gap: 10px;
+}
+
+.footer-links a {
+  color:
+    rgba(255, 255, 255, 0.5);
+
+  text-decoration: none;
+
+  font-size: 11px;
+
+  transition:
+    color 0.25s ease;
+}
+
+.footer-links a:hover {
+  color: #00f7ff;
+}
+
+
+/* =========================================================
+   REVIEW FORM
+========================================================= */
+
+.review-form {
+  margin-top: 15px;
+}
+
+.review-form textarea {
+  width: 100%;
+
+  min-height: 80px;
+
+  padding: 12px;
+
+  resize: vertical;
+
+  outline: none;
+
+  border-radius: 10px;
+
+  border:
+    1px solid
+    rgba(255, 255, 255, 0.1);
+
+  background:
+    rgba(255, 255, 255, 0.05);
+
+  color: #ffffff;
+
+  font-family:
+    "Poppins",
+    sans-serif;
+
+  font-size: 11px;
+}
+
+.review-form textarea::placeholder {
+  color:
+    rgba(255, 255, 255, 0.3);
+}
+
+.review-form textarea:focus {
+  border-color:
+    rgba(0, 247, 255, 0.4);
+}
+
+.submit-review-btn {
+  margin-top: 8px;
+
+  padding:
+    9px 16px;
+
+  border-radius: 8px;
+
+  border:
+    1px solid
+    rgba(0, 247, 255, 0.2);
+
+  background:
+    rgba(0, 247, 255, 0.12);
+
+  color: #00f7ff;
+
+  font-size: 10px;
+
+  cursor: pointer;
+
+  transition:
+    background 0.25s ease;
+}
+
+.submit-review-btn:hover {
+  background:
+    rgba(0, 247, 255, 0.2);
+}
+
+
+/* =========================================================
+   FOOTER BOTTOM
+========================================================= */
+
+.footer-bottom {
+  padding: 20px;
+
+  text-align: center;
+
+  border-top:
+    1px solid
+    rgba(255, 255, 255, 0.06);
+}
+
+.footer-bottom p {
+  color:
+    rgba(255, 255, 255, 0.3);
+
+  font-size: 9px;
+}
+
+
+/* =========================================================
+   RESPONSIVE
+========================================================= */
+
+@media (max-width: 1000px) {
+
+  .footer-container {
+    grid-template-columns:
+      1fr 1fr;
+  }
+
+  .feedback-column {
+    grid-column:
+      1 / -1;
+  }
+
+}
+
+
+/* =========================================================
+   TABLET
+========================================================= */
+
+@media (max-width: 768px) {
+
+  .header-container {
+    width:
+      calc(100% - 35px);
+
+    min-height: 72px;
+  }
+
+  .logo-image {
+    width: 125px;
+  }
+
+
+  /* MOBILE NAV */
+
+  .nav-links {
+    display: none;
+
+    position: absolute;
+
+    top: 72px;
+
+    left: 17px;
+    right: 17px;
+
+    padding: 22px;
+
+    flex-direction: column;
+
+    gap: 22px;
+
+    background:
+      rgba(4, 8, 25, 0.96);
+
+    border:
+      1px solid
+      rgba(255, 255, 255, 0.1);
+
+    border-radius: 15px;
+
+    backdrop-filter:
+      blur(18px);
+
+    -webkit-backdrop-filter:
+      blur(18px);
+  }
+
+  .nav-links.open {
+    display: flex;
+  }
+
+  .burger {
+    display: flex;
+  }
+
+
+  /* GAME */
+
+  .game-section {
+    padding:
+      120px
+      15px
+      70px;
+  }
+
+  .game-container {
+    height: 450px;
+  }
+
+
+  /* FOOTER */
+
+  .footer-container {
+    grid-template-columns:
+      1fr;
+
+    gap: 35px;
+  }
+
+  .feedback-column {
+    grid-column:
+      auto;
+  }
+
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 520px) {
+
+  .game-section {
+    padding:
+      110px
+      12px
+      60px;
+  }
+
+
+  .game-header h1 {
+    font-size: 34px;
+  }
+
+  .game-header p {
+    font-size: 12px;
+  }
+
+
+  /* HUD */
+
+  .game-hud {
+    gap: 8px;
+  }
+
+  .hud-item {
+    padding:
+      11px;
+
+    gap: 9px;
+  }
+
+  .hud-icon {
+    width: 35px;
+    height: 35px;
+
+    font-size: 15px;
+  }
+
+  .hud-item strong {
+    font-size: 18px;
+  }
+
+
+  /* GAME */
+
+  .game-container {
+    height: 400px;
+  }
+
+  .spaceship {
+    width: 48px;
+  }
+
+  .alien {
+    width: 40px;
+  }
+
+
+  /* BUTTON */
+
+  .game-controls {
+    flex-direction: column;
+  }
+
+  .game-btn {
+    width: 100%;
+  }
+
+
+  /* KEYBOARD */
+
+  .space-key {
+    margin-left: 0;
+  }
+
+  .control-guide {
+    gap: 6px;
+
+    font-size: 8px;
+  }
+
+
+  /* RESULT */
+
+  .result-card {
+    padding:
+      30px 20px;
+  }
+
+}
+
+
+/* =========================================================
+   REDUCED MOTION
+========================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+
+  *,
+  *::before,
+  *::after {
+    animation-duration:
+      0.01ms !important;
+
+    animation-iteration-count:
+      1 !important;
+
+    transition-duration:
+      0.01ms !important;
+  }
+
+}

@@ -1,0 +1,459 @@
+```html
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>Stellar Kids | Games</title>
+
+    <meta
+        name="description"
+        content="Mainkan permainan edukatif bertema luar angkasa bersama Stellar Kids."
+    >
+
+    <!-- Google Font -->
+    <link
+        href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;600;700&display=swap"
+        rel="stylesheet"
+    >
+
+    <!-- CSS -->
+    <link
+        rel="stylesheet"
+        href="page_game.css"
+    >
+
+</head>
+
+
+<body>
+
+
+    <!-- =====================================================
+         BACKGROUND VIDEO
+    ====================================================== -->
+
+    <div
+        class="background-video"
+        aria-hidden="true"
+    >
+
+        <video
+            autoplay
+            muted
+            loop
+            playsinline
+            poster="https://i.imgur.com/7sGwQYQ.png"
+        >
+
+            <source
+                src="Video/Star scene - Free M.G Stock Footage.mp4"
+                type="video/mp4"
+            >
+
+            Browser Anda tidak mendukung video.
+
+        </video>
+
+        <div class="background-overlay"></div>
+
+    </div>
+
+
+
+    <!-- =====================================================
+         HEADER
+    ====================================================== -->
+
+    <header class="main-header">
+
+        <div class="header-container">
+
+
+            <!-- Logo -->
+
+            <a
+                href="index.html"
+                class="logo"
+            >
+
+                <img
+                    src="Png/Logo@4x.png"
+                    alt="Logo Stellar Kids"
+                    class="logo-image"
+                >
+
+            </a>
+
+
+
+            <!-- Navigation -->
+
+            <nav
+                class="main-nav"
+                aria-label="Navigasi utama"
+            >
+
+                <ul class="nav-links">
+
+                    <li>
+                        <a href="index.html">
+                            Beranda
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="tentangweb.html">
+                            Tentang Web
+                        </a>
+                    </li>
+
+                    <li>
+                        <a
+                            href="page_game.html"
+                            class="active"
+                        >
+                            Games
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="index.html#pembelajaran">
+                            Pembelajaran
+                        </a>
+                    </li>
+
+                </ul>
+
+
+
+                <!-- Mobile Menu -->
+
+                <button
+                    class="burger"
+                    type="button"
+                    aria-label="Buka menu navigasi"
+                    aria-expanded="false"
+                >
+
+                    <span></span>
+                    <span></span>
+                    <span></span>
+
+                </button>
+
+            </nav>
+
+        </div>
+
+    </header>
+
+
+
+    <!-- =====================================================
+         MAIN GAME SECTION
+    ====================================================== -->
+
+    <main class="game-selection">
+
+
+        <!-- Decorative stars -->
+
+        <div
+            class="game-stars"
+            aria-hidden="true"
+        >
+
+            <span class="star star-1"></span>
+            <span class="star star-2"></span>
+            <span class="star star-3"></span>
+            <span class="star star-4"></span>
+            <span class="star star-5"></span>
+
+        </div>
+
+
+
+        <!-- Heading -->
+
+        <div class="game-heading">
+
+            <span class="section-label">
+                Stellar Kids Arcade
+            </span>
+
+            <h1>
+                Pilih Game Anda!
+            </h1>
+
+            <p>
+                Jelajahi luar angkasa sambil belajar melalui
+                permainan interaktif yang seru dan edukatif.
+            </p>
+
+        </div>
+
+
+
+        <!-- =================================================
+             GAME CARDS
+        ================================================== -->
+
+        <div class="game-icons">
+
+
+            <!-- =================================================
+                 GAME 1 — SUSUN PLANET
+            ================================================== -->
+
+            <a
+                href="susun_planet.html"
+                class="game-card planet-game"
+            >
+
+                <div class="game-icon">
+
+
+                    <!-- Image -->
+
+                    <div class="game-image-wrapper">
+
+                        <img
+                            src="Png/Planet Game@4x.png"
+                            alt="Ilustrasi permainan Susun Planet"
+                        >
+
+                    </div>
+
+
+
+                    <!-- Content -->
+
+                    <div class="game-content">
+
+                        <span class="game-number">
+                            GAME 01
+                        </span>
+
+                        <h2>
+                            Susun Planet
+                        </h2>
+
+                        <p>
+                            Susun planet pada posisi yang tepat
+                            dan kenali tata surya kita.
+                        </p>
+
+                        <span class="play-button">
+                            Mulai Bermain
+                            <span class="arrow">→</span>
+                        </span>
+
+                    </div>
+
+                </div>
+
+            </a>
+
+
+
+            <!-- =================================================
+                 GAME 2 — TEMBAK ALIEN
+            ================================================== -->
+
+            <a
+                href="tembakalien.html"
+                class="game-card alien-game"
+            >
+
+                <div class="game-icon">
+
+
+                    <!-- Image -->
+
+                    <div class="game-image-wrapper">
+
+                        <img
+                            src="Png/Plane Game@4x.png"
+                            alt="Ilustrasi permainan Tembak Alien"
+                        >
+
+                    </div>
+
+
+
+                    <!-- Content -->
+
+                    <div class="game-content">
+
+                        <span class="game-number">
+                            GAME 02
+                        </span>
+
+                        <h2>
+                            Tembak Alien
+                        </h2>
+
+                        <p>
+                            Hadapi serangan alien dan uji
+                            ketangkasanmu dalam menjaga bumi.
+                        </p>
+
+                        <span class="play-button">
+                            Mulai Bermain
+                            <span class="arrow">→</span>
+                        </span>
+
+                    </div>
+
+                </div>
+
+            </a>
+
+
+        </div>
+
+
+    </main>
+
+
+
+    <!-- =====================================================
+         FOOTER
+    ====================================================== -->
+
+    <footer class="main-footer">
+
+
+        <div class="footer-container">
+
+
+            <!-- Brand -->
+
+            <div class="footer-column footer-brand">
+
+                <img
+                    src="Png/Logo@4x.png"
+                    alt="Logo Stellar Kids"
+                    class="footer-logo"
+                >
+
+                <p>
+                    Dibuat dengan dedikasi dan inovasi untuk
+                    membantu meningkatkan literasi luar angkasa
+                    melalui media pembelajaran digital interaktif.
+                </p>
+
+            </div>
+
+
+
+            <!-- Navigation -->
+
+            <div class="footer-column">
+
+                <h3>
+                    Navigasi
+                </h3>
+
+                <ul class="footer-links">
+
+                    <li>
+                        <a href="index.html">
+                            Beranda
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="tentangweb.html">
+                            Tentang Web
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="page_game.html">
+                            Games
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="index.html#pembelajaran">
+                            Pembelajaran
+                        </a>
+                    </li>
+
+                </ul>
+
+            </div>
+
+
+
+            <!-- Review -->
+
+            <div class="footer-column feedback-column">
+
+                <h3>
+                    Berikan Ulasan
+                </h3>
+
+                <p>
+                    Pendapat Anda sangat berarti bagi
+                    pengembangan Stellar Kids.
+                </p>
+
+
+        <form class="review-form" id="review-form">
+
+  <textarea
+    id="review-text"
+    name="review"
+    placeholder="Tulis ulasan Anda..."
+    rows="4"
+    required
+  ></textarea>
+
+  <button
+    type="submit"
+    class="submit-review-btn"
+  >
+    Kirim Ulasan
+  </button>
+
+                </form>
+
+            </div>
+
+
+        </div>
+
+
+
+        <!-- Footer Bottom -->
+
+        <div class="footer-bottom">
+
+            <p>
+                &copy; 2026 Stellar Kids. All Rights Reserved.
+            </p>
+
+        </div>
+
+
+    </footer>
+
+
+
+    <!-- JavaScript -->
+
+    <script src="ulasan.js"></script>
+
+</body>
+
+</html>

@@ -1,0 +1,545 @@
+```html
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Stellar Kids | Belajar Luar Angkasa</title>
+
+  <meta
+    name="description"
+    content="Stellar Kids adalah platform pembelajaran interaktif untuk mengenal luar angkasa melalui video, materi, dan permainan edukatif."
+  >
+  <link rel="stylesheet" href="index.css">
+</head>
+
+<body>
+
+  <!-- =========================
+       BACKGROUND VIDEO
+  ========================== -->
+  <div class="background-video" aria-hidden="true">
+    <video
+      autoplay
+      muted
+      loop
+      playsinline
+      poster="https://i.imgur.com/7sGwQYQ.png"
+    >
+      <source
+        src="Deep Field_ The Impossible Magnitude of our Universe.mp4"
+        type="video/mp4"
+      >
+    </video>
+
+    <div class="background-overlay"></div>
+  </div>
+
+
+  <!-- =========================
+       HEADER
+  ========================== -->
+  <header class="main-header">
+
+    <div class="header-container">
+
+      <!-- Logo -->
+      <a href="index.html" class="logo">
+        <img
+          src="Png/Logo@4x.png"
+          alt="Logo Stellar Kids"
+          class="logo-image"
+        >
+      </a>
+
+      <!-- Navigation -->
+      <nav class="main-nav" aria-label="Navigasi utama">
+
+        <ul class="nav-links">
+          <li>
+            <a href="index.html" class="active">Beranda</a>
+          </li>
+
+          <li>
+            <a href="tentangweb.html">Tentang Web</a>
+          </li>
+
+          <li>
+            <a href="page_game.html">Games</a>
+          </li>
+
+          <li>
+            <a href="#pembelajaran">Pembelajaran</a>
+          </li>
+        </ul>
+
+        <!-- Mobile Menu Button -->
+        <button
+          class="burger"
+          type="button"
+          aria-label="Buka menu navigasi"
+          aria-expanded="false"
+        >
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+
+      </nav>
+
+    </div>
+
+  </header>
+
+
+  <!-- =========================
+       MAIN CONTENT
+  ========================== -->
+  <main>
+
+
+    <!-- =========================
+         HERO SECTION
+    ========================== -->
+    <section class="hero">
+
+      <div class="hero-container">
+
+        <!-- Hero Text -->
+        <div class="hero-content">
+
+          <span class="hero-label">
+            Jelajahi Luar Angkasa
+          </span>
+
+          <h1>
+            Bersiaplah Menjelajah Semesta!
+          </h1>
+
+          <h2>
+            Saatnya Belajar dan Mengenal Luar Angkasa Lebih Dekat.
+          </h2>
+
+          <p>
+            Stellar Kids adalah platform pembelajaran interaktif berbasis web
+            yang mengajak pengguna untuk menjelajahi dunia luar angkasa sambil
+            mempelajari sains, matematika, dan berbagai fenomena alam melalui
+            pengalaman belajar yang menarik dan mudah dipahami.
+          </p>
+
+          <div class="hero-buttons">
+
+            <a
+              href="#pembelajaran"
+              class="btn btn-primary"
+            >
+              Mulai Belajar
+            </a>
+
+            <a
+              href="tentangweb.html"
+              class="btn btn-secondary"
+            >
+              Tentang Stellar Kids
+            </a>
+
+          </div>
+
+        </div>
+
+
+        <!-- Hero Illustration -->
+        <div class="hero-illustration">
+
+          <img
+            src="Png/Char 3@4x.png"
+            alt="Ilustrasi karakter Stellar Kids menjelajahi luar angkasa"
+            class="astronaut-img"
+          >
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+
+    <!-- =========================
+         LEARNING SECTION
+    ========================== -->
+    <section
+      class="learning-highlights"
+      id="pembelajaran"
+    >
+
+      <!-- Decorative Wave -->
+      <div class="wave-container" aria-hidden="true">
+
+        <svg
+          class="wave"
+          viewBox="0 0 1440 320"
+          preserveAspectRatio="none"
+        >
+          <path
+            d="
+            M0,160
+            L48,154.7
+            C96,149,192,139,288,154.7
+            C384,171,480,203,576,202.7
+            C672,203,768,181,864,186.7
+            C960,171,1056,149,1152,160
+            C1248,171,1344,181,1392,186.7
+            L1440,192
+            L1440,320
+            L0,320
+            Z
+            "
+          ></path>
+        </svg>
+
+      </div>
+
+
+      <div class="section-container">
+
+        <!-- Section Header -->
+        <div class="section-heading">
+
+          <span class="section-label">
+            Pembelajaran
+          </span>
+
+          <h2>
+            Mulai Petualangan Luar Angkasamu
+          </h2>
+
+          <p>
+            Pelajari berbagai topik mengenai galaksi, tata surya,
+            planet, dan fenomena luar angkasa melalui video edukatif.
+          </p>
+
+        </div>
+
+
+        <!-- Carousel -->
+        <div class="carousel-wrapper">
+
+          <div class="carousel-container">
+
+
+            <!-- Item 1 -->
+            <article class="carousel-item">
+
+              <div class="thumbnail-wrapper">
+
+                <img
+                  src="Png/thumb1.jpg"
+                  alt="Thumbnail pembelajaran tentang galaksi"
+                  class="video-thumb"
+                  loading="lazy"
+                >
+
+                <span class="video-category">
+                  Galaksi
+                </span>
+
+              </div>
+
+              <div class="card-content">
+
+                <h3>
+                  Apa Itu Galaksi?
+                </h3>
+
+                <p>
+                  Yuk, kita telusuri dan mengenal lebih dekat dunia galaksi.
+                </p>
+
+                <button
+                  class="learn-more-btn"
+                  type="button"
+                  data-video="galaxy"
+                >
+                  Putar Video
+                </button>
+
+              </div>
+
+            </article>
+
+
+
+            <!-- Item 2 -->
+            <article class="carousel-item">
+
+              <div class="thumbnail-wrapper">
+
+                <img
+                  src="Png/thumb2.jpg"
+                  alt="Thumbnail pembelajaran mengenai sistem tata surya"
+                  class="video-thumb"
+                  loading="lazy"
+                >
+
+                <span class="video-category">
+                  Tata Surya
+                </span>
+
+              </div>
+
+              <div class="card-content">
+
+                <h3>
+                  Mengenal Sistem Tata Surya
+                </h3>
+
+                <p>
+                  Mari eksplorasi Matahari, planet, dan objek lainnya
+                  di sistem tata surya kita.
+                </p>
+
+                <button
+                  class="learn-more-btn"
+                  type="button"
+                  data-video="solar-system"
+                >
+                  Putar Video
+                </button>
+
+              </div>
+
+            </article>
+
+
+
+            <!-- Item 3 -->
+            <article class="carousel-item">
+
+              <div class="thumbnail-wrapper">
+
+                <img
+                  src="Png/thumb3.jpg"
+                  alt="Thumbnail pembelajaran mengenai planet Bumi"
+                  class="video-thumb"
+                  loading="lazy"
+                >
+
+                <span class="video-category">
+                  Planet
+                </span>
+
+              </div>
+
+              <div class="card-content">
+
+                <h3>
+                  Mengenal Bumi Kita
+                </h3>
+
+                <p>
+                  Kenali lebih dalam planet tempat kita tinggal
+                  dan berbagai karakteristiknya.
+                </p>
+
+                <button
+                  class="learn-more-btn"
+                  type="button"
+                  data-video="earth"
+                >
+                  Putar Video
+                </button>
+
+              </div>
+
+            </article>
+
+
+
+            <!-- Item 4 -->
+            <article class="carousel-item">
+
+              <div class="thumbnail-wrapper">
+
+                <img
+                  src="Png/thumb4.jpg"
+                  alt="Thumbnail pembelajaran mengenai kehidupan di luar Bumi"
+                  class="video-thumb"
+                  loading="lazy"
+                >
+
+                <span class="video-category">
+                  Misteri Semesta
+                </span>
+
+              </div>
+
+              <div class="card-content">
+
+                <h3>
+                  Apakah Alien Itu Ada?
+                </h3>
+
+                <p>
+                  Mari mengenal pencarian kehidupan di luar Bumi
+                  berdasarkan ilmu pengetahuan.
+                </p>
+
+                <button
+                  class="learn-more-btn"
+                  type="button"
+                  data-video="alien"
+                >
+                  Putar Video
+                </button>
+
+              </div>
+
+            </article>
+
+
+          </div>
+
+
+          <!-- Carousel Controls -->
+          <div class="carousel-controls">
+
+            <button
+              class="carousel-arrow prev-arrow"
+              type="button"
+              aria-label="Pembelajaran sebelumnya"
+            >
+              &#8592;
+            </button>
+
+            <div class="carousel-dots"></div>
+
+            <button
+              class="carousel-arrow next-arrow"
+              type="button"
+              aria-label="Pembelajaran berikutnya"
+            >
+              &#8594;
+            </button>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+  </main>
+
+
+
+  <!-- =========================
+       FOOTER
+  ========================== -->
+  <footer class="main-footer">
+
+    <div class="footer-container">
+
+      <!-- Brand -->
+      <div class="footer-column footer-brand">
+
+        <img
+          src="Png/Logo@4x.png"
+          alt="Logo Stellar Kids"
+          class="footer-logo"
+        >
+
+        <p>
+          Dibuat dengan dedikasi dan inovasi untuk membantu
+          meningkatkan literasi luar angkasa melalui media
+          pembelajaran digital yang interaktif.
+        </p>
+
+      </div>
+
+
+      <!-- Navigation -->
+      <div class="footer-column">
+
+        <h3>
+          Navigasi
+        </h3>
+
+        <ul class="footer-links">
+
+          <li>
+            <a href="index.html">Beranda</a>
+          </li>
+
+          <li>
+            <a href="tentangweb.html">Tentang Web</a>
+          </li>
+
+          <li>
+            <a href="page_game.html">Games</a>
+          </li>
+
+          <li>
+            <a href="#pembelajaran">Pembelajaran</a>
+          </li>
+
+        </ul>
+
+      </div>
+
+
+      <!-- Feedback -->
+      <div class="footer-column feedback-column">
+
+        <h3>
+          Berikan Ulasan
+        </h3>
+
+        <p>
+          Pendapat Anda sangat berarti bagi pengembangan Stellar Kids.
+        </p>
+
+        <form class="review-form" id="review-form">
+
+  <textarea
+    id="review-text"
+    name="review"
+    placeholder="Tulis ulasan Anda..."
+    rows="4"
+    required
+  ></textarea>
+
+  <button
+    type="submit"
+    class="submit-review-btn"
+  >
+    Kirim Ulasan
+  </button>
+
+</form>
+
+      </div>
+
+    </div>
+
+
+    <!-- Footer Bottom -->
+    <div class="footer-bottom">
+
+      <p>
+        &copy; 2026 Stellar Kids. All Rights Reserved.
+      </p>
+
+    </div>
+
+  </footer>
+
+
+  <script src="ulasan.js"></script>
+
+</body>
+</html>
+```
